@@ -1,0 +1,14 @@
+[workspace]
+authors = ["Modular <hello@modular.com>"]
+channels = ["conda-forge", "https://conda.modular.com/max-nightly/"]
+description = "Mandelbrot set computed on CUDA GPU using Mojo"
+name = "mandelbrot-cuda-gpu"
+platforms = ["linux-64", "linux-aarch64"]
+version = "0.1.0"
+
+[tasks]
+main = "mojo run mandelbrot.mojo"
+test = { depends-on = ["main"] }
+
+[dependencies]
+mojo = "<1.0.0"
